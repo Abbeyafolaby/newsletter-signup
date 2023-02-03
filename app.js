@@ -1,3 +1,4 @@
+require("dotenv").config()
 const express = require("express")
 const bodyParser = require("body-parser")
 const request = require("request")
@@ -8,6 +9,10 @@ const app = express()
 
 app.use(express.static("public"))
 app.use(bodyParser.urlencoded({extended: true}))
+
+const API_KEY = process.env.API_KEY
+const USER_ID = process.env.USER_ID
+
 
 
 app.get("/", (req, res) => {
@@ -32,13 +37,16 @@ app.post("/", (req, res) => {
         ]
     }
 
+   
+
     const jsonData = JSON.stringify(data)
 
-    const url = "https://us13.api.mailchimp.com/3.0/lists/1cc209e918"
+    const url = "https://us13.api.mailchimp.com/3.0/lists/"+ USER_ID +""
     const options = {
         method: "POST",
-        auth: "abbey:b2ead80b388f592dc6c59fbbed0c56a8-us13"
+        auth: "abbey:"+ API_KEY +""
     }
+
 
     const request =  https.request(url, options, (response) => {
 
@@ -60,6 +68,8 @@ app.post("/", (req, res) => {
 })
 
 
+
+
 app.post("/failure", (req, res) => {
     res.redirect("/")
 })
@@ -69,6 +79,3 @@ app.listen(process.env.PORT || 3000, () => {
     console.log("Server dey run")
 })
 
-// b2ead80b388f592dc6c59fbbed0c56a8-us13
-
-// 1cc209e918
