@@ -1,4 +1,4 @@
-html,
+/* html,
 body {
   height: 100%;
 }
@@ -34,7 +34,7 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-}
+} */
 
 
 /*======================
@@ -42,7 +42,7 @@ body {
 =======================*/
 
 
-.page_404{ 
+/* .page_404{ 
   padding:40px 0; 
   background:#fff; 
   font-family: 'Arvo', serif;
@@ -106,4 +106,4 @@ h1 {
     background: #39ac31;
     margin: 20px 0;
     display: inline-block;}
-	.contant_box_404{ margin-top:-50px;}
+	.contant_box_404{ margin-top:-50px;} */
